@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import example.blog.entity.Post;
 import example.blog.service.PostService;
 import lombok.RequiredArgsConstructor;
 
