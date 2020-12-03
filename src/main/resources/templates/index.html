@@ -12,12 +12,14 @@
 <br>
 
 <div class="container">
-	<div class="card" style="width: 18rem;">
-  		<div class="card-body">
-		    <h5 class="card-title">Post title</h5>
-		    <p class="card-text">some example test</p>
-		    <a href="#" class="card-link">details</a>
-  		</div>
+	<div th:each="post: ${posts}">
+		<div class="media">
+			<div class="media-body">
+    			<h5 class="mt-0" th:text="${post.title}"></h5>
+    			<span th:text="${post.text}"> </span>
+  			</div>
+		</div>
+		<br>
 	</div>
 </div>
 
