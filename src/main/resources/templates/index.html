@@ -8,18 +8,14 @@
 
 <nav th:replace="fragments :: navbar"></nav>
 
-<br>
-<br>
-
-<div class="container">
+<div class="container mt-5">
 	<div th:each="post: ${posts}">
-		<div class="media border p-3">
+		<div class="media border p-3 m-3">
 			<div class="media-body">
     			<h5 class="mt-0" th:text="${post.title}"></h5>
     			<span th:text="${post.text}"> </span>
   			</div>
 		</div>
-		<br>
 	</div>
 </div>
 
