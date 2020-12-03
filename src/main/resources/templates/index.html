@@ -13,7 +13,7 @@
 
 <div class="container">
 	<div th:each="post: ${posts}">
-		<div class="media">
+		<div class="media border p-3">
 			<div class="media-body">
     			<h5 class="mt-0" th:text="${post.title}"></h5>
     			<span th:text="${post.text}"> </span>
