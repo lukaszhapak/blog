@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import example.blog.enums.Role;
 import lombok.Data;
 
 @Entity
@@ -18,5 +19,6 @@ public class User {
 	private String userName;
 	private String password;
 	private String email;
+	private Role role;
 
 }
