@@ -9,6 +9,6 @@ public class AdminCorntoller {
 	
 	@GetMapping("/admin")
 	public String admin() {
-		return"admin";
+		return"admin/admin";
 	}
 }
