@@ -3,6 +3,7 @@ package example.blog.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import example.blog.entity.Post;
@@ -25,6 +26,12 @@ public class AdminController {
 	@PostMapping("/post/add")
 	public String addPost(Post post) {
 		postService.save(post);
+		return "redirect:/";
+	}
+	
+	@GetMapping("/post/{id}/delete")
+	public String deletePost(@PathVariable int id) {
+		postService.deleteById(id);
 		return "redirect:/";
 	}
 }
