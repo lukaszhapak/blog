@@ -13,7 +13,7 @@
 	
 	<h3 class="my-5">Dodaj nowy wpis na bloga</h3>
 	
-	<form method="post" th:action="@{/post/add}" th:object="${post}">
+	<form method="post" th:action="@{/admin/post/add}" th:object="${post}">
 		<div class="form-group">
 		    <label for="title">Tytuł</label>
 		    <input type="text" class="form-control" id="title" th:field="*{title}">

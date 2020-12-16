@@ -23,13 +23,13 @@ public class AdminController {
 		return"admin/admin";
 	}
 	
-	@PostMapping("/post/add")
+	@PostMapping("/admin/post/add")
 	public String addPost(Post post) {
 		postService.save(post);
 		return "redirect:/";
 	}
 	
-	@GetMapping("/post/{id}/delete")
+	@GetMapping("/admin/post/{id}/delete")
 	public String deletePost(@PathVariable int id) {
 		postService.deleteById(id);
 		return "redirect:/";
