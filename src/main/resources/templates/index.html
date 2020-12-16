@@ -15,6 +15,7 @@
 				<a sec:authorize="hasRole('ADMIN')" class="float-right" th:href="@{|/admin/post/${post.id}/delete|}">X</a>
     			<h5 class="mt-0" th:text="${post.title}"></h5>
     			<span th:text="${post.text}"> </span>
+    			<a sec:authorize="hasRole('ADMIN')" class="float-right" th:href="@{|/admin/post/${post.id}/update|}">Edytuj</a>
   			</div>
 		</div>
 	</div>
