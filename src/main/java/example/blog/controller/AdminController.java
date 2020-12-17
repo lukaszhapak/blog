@@ -36,8 +36,14 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin/post/{id}/update")
-	public String updatePost(@PathVariable int id, Model model) {
+	public String editPost(@PathVariable int id, Model model) {
 		model.addAttribute("post", postService.findById(id));
 		return "admin/update";
+	}
+	
+	@PostMapping("/admin/post/{id}/update")
+	public String updatePost(@PathVariable int id, Post post) {
+		postService.save(post);
+		return "redirect:/";
 	}
 }
