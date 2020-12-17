@@ -2,23 +2,24 @@
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <th:block th:include="fragments :: header">
+    <th:block th:include="fragments :: header"></th:block>
 </head>
 <body>
 
 <nav th:replace="fragments :: navbar"></nav>
 
 <div class="container mt-5">
-	<div th:each="post: ${posts}">
-		<div class="media border p-3 m-3">
-			<div class="media-body">
-				<a sec:authorize="hasRole('ADMIN')" class="float-right" th:href="@{|/admin/post/${post.id}/delete|}">X</a>
-    			<h5 class="mt-0" th:text="${post.title}"></h5>
-    			<span th:text="${post.text}"> </span>
-    			<a sec:authorize="hasRole('ADMIN')" class="float-right" th:href="@{|/admin/post/${post.id}/update|}">Edytuj</a>
-  			</div>
-		</div>
-	</div>
+    <div th:each="post: ${posts}">
+        <div class="media border p-3 m-3">
+            <div class="media-body">
+                <a class="float-right" sec:authorize="hasRole('ADMIN')"
+                   th:href="@{|/admin/post/${post.id}/delete|}">X</a>
+                <h5 class="mt-0" th:text="${post.title}"></h5>
+                <span th:text="${post.text}"> </span>
+                <a class="float-right" sec:authorize="hasRole('ADMIN')" th:href="@{|/admin/post/${post.id}/update|}">Edytuj</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div th:replace="fragments :: scripts"></div>
