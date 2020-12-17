@@ -34,4 +34,10 @@ public class AdminController {
 		postService.deleteById(id);
 		return "redirect:/";
 	}
+	
+	@GetMapping("/admin/post/{id}/update")
+	public String updatePost(@PathVariable int id, Model model) {
+		model.addAttribute("post", postService.findById(id));
+		return "admin/update";
+	}
 }
