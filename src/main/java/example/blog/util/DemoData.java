@@ -1,12 +1,11 @@
 package example.blog.util;
 
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
-
 import example.blog.entity.User;
 import example.blog.enums.Role;
 import example.blog.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
@@ -18,7 +17,7 @@ public class DemoData implements CommandLineRunner {
     public void run(String... args) {
 
         if (userService.count() == 0) {
-           
+
             User user = new User();
             user.setUserName("admin");
             user.setPassword("123");

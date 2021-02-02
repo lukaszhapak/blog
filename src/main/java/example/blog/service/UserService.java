@@ -1,14 +1,12 @@
 package example.blog.service;
 
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-
 import example.blog.entity.User;
 import example.blog.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -34,8 +32,8 @@ public class UserService {
         userRepository.deleteById(Long.parseLong(id));
     }
 
-	public long count() {
-		return userRepository.count();
-	}
+    public long count() {
+        return userRepository.count();
+    }
 
 }
