@@ -1,12 +1,11 @@
 package example.blog.service;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import example.blog.entity.Post;
 import example.blog.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -15,7 +14,7 @@ public class PostService {
     private final PostRepository postRepository;
 
     public List<Post> findAll() {
-        return postRepository.findAll();
+        return postRepository.findAllByOrderByIdDesc();
     }
 
     public Post findById(long id) {

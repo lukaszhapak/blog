@@ -1,9 +1,11 @@
 package example.blog.repository;
 
+import example.blog.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import example.blog.entity.Post;
+import java.util.List;
 
 public interface PostRepository extends JpaRepository<Post, Long> {
 
+    List<Post> findAllByOrderByIdDesc();
 }
