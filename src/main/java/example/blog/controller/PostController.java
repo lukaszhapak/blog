@@ -29,7 +29,7 @@ public class PostController {
     }
 
     @PostMapping("/post/{id}/comment/add")
-    public String register(Comment comment, Model model, @PathVariable int id,
+    public String register(Comment comment, @PathVariable int id,
                            @AuthenticationPrincipal MyUserDetails currentUser) {
         Post post = new Post();
         post.setId((long) id);
