@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String register(User user, Model model) {
+    public String register(User user) {
         user.setRole(example.blog.enums.Role.ROLE_USER);
         userService.save(user);
         return "redirect:/";
