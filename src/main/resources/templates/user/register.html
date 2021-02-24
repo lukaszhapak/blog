@@ -10,27 +10,33 @@
 <nav th:replace="fragments :: navbar"></nav>
 
 <div class="container">
-	<h3 class="my-5">Zarejestruj się</h3>
+    <h3 class="my-5">Zarejestruj się</h3>
 
-	<form method="post" th:action="@{/register}" th:object="${user}">
-		<div class="form-group">
-			<label for="username">Nazwa użytkownika</label>
-			<input class="form-control" id="username" th:field="*{userName}" type="text">
-			<span th:errors="*{userName}" th:if="${#fields.hasErrors('userName')}"> </span>
-		</div>
-		<div class="form-group">
-			<label for="email">Adres email</label>
-			<input class="form-control" id="email" th:field="*{email}" type="email">
-			<span th:errors="*{email}" th:if="${#fields.hasErrors('email')}"> </span>
-		</div>
-		<div class="form-group">
-			<label for="password">Hasło</label>
-			<input class="form-control" id="password" th:field="*{password}" type="password">
-			<span th:errors="*{password}" th:if="${#fields.hasErrors('password')}"> </span>
-		</div>
+    <form method="post" th:action="@{/register}" th:object="${user}">
+        <div class="form-group">
+            <label for="username">Nazwa użytkownika</label>
+            <input class="form-control" id="username" th:field="*{userName}" type="text">
+            <span th:errors="*{userName}" th:if="${#fields.hasErrors('userName')}"> </span>
+            <span th:if="${uniqueErrors}">
+    	        <span th:if="${uniqueErrors.containsKey('userName')}" th:text="${uniqueErrors.get('userName')}"></span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="email">Adres email</label>
+            <input class="form-control" id="email" th:field="*{email}" type="email">
+            <span th:errors="*{email}" th:if="${#fields.hasErrors('email')}"> </span>
+            <span th:if="${uniqueErrors}">
+                <span th:if="${uniqueErrors.containsKey('email')}" th:text="${uniqueErrors.get('email')}"></span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="password">Hasło</label>
+            <input class="form-control" id="password" th:field="*{password}" type="password">
+            <span th:errors="*{password}" th:if="${#fields.hasErrors('password')}"> </span>
+        </div>
 
-		<input class="btn btn-primary mt-3 float-right" type="submit" value="Zarejestruj">
-	</form>
+        <input class="btn btn-primary mt-3 float-right" type="submit" value="Zarejestruj">
+    </form>
 </div>
 
 <div th:replace="fragments :: scripts"></div>
