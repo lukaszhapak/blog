@@ -34,6 +34,7 @@
         <form method="post" th:action="@{|/post/${post.id}/comment/add|}" th:object="${comment}">
             <div class="form-group">
                 <input class="form-control" placeholder="Skomentuj..." th:field="*{text}" type="text">
+                <span th:errors="*{text}" th:if="${#fields.hasErrors('text')}"> </span>
             </div>
             <input class="btn btn-primary" type="submit" value="Dodaj komentarz">
         </form>
